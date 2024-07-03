@@ -35,3 +35,7 @@ kotlin {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+
+subprojects {
+    tasks.register("prepareKotlinBuildScriptModel") {}
+}
