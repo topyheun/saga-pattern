@@ -1,11 +1,11 @@
-package topy.sagapattern
+package stock
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class SagaPatternApplication
+class StockApplication
 
 fun main(args: Array<String>) {
-    runApplication<SagaPatternApplication>(*args)
+	runApplication<StockApplication>(*args)
 }
