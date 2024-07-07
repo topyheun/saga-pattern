@@ -22,16 +22,19 @@ sequenceDiagram
     participant PaymentService as Payment Service
     participant Kafka as Kafka
     User ->> OrderService: 상품 주문
+    OrderService ->> OrderService: 주문 생성
     OrderService ->> Kafka: 주문 생성 이벤트 발행
     Kafka ->> StockService: 주문 생성 이벤트 수신
     StockService ->> StockService: 재고 감소
-    Kafka ->> PaymentService: 주문 생성 이벤트 수신
+    StockService ->> Kafka: 재고 감소 이벤트 발행
+    Kafka ->> PaymentService: 재고 감소 이벤트 수신
     PaymentService ->> PaymentService: 결제 시도
     alt 결제 실패
-        PaymentService -->> Kafka: 결제 실패 이벤트 발행
-        Kafka ->> StockService: 결제 실패 이벤트 수신
-        StockService ->> StockService: 재고 복구
-        Kafka ->> OrderService: 결제 실패 이벤트 수신
-        OrderService ->> OrderService: 주문 취소 처리
+        PaymentService -->> Kafka: 재고 롤백 이벤트 발행
+        Kafka ->> StockService: 재고 롤백 이벤트 수신
+        StockService ->> StockService: 재고 롤백
+        StockService -->> Kafka: 주문 롤백 이벤트 발행
+        Kafka ->> OrderService: 주문 롤백 이벤트 수신
+        OrderService ->> OrderService: 주문 롤백
     end
 ```
