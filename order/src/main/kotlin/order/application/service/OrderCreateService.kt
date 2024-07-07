@@ -19,4 +19,8 @@ class OrderCreateService(
         val order = orderPersistencePort.save(Order.of(orderCreateCommand.productId))
         orderPublishPort.publishOrderCreatedEvent(order.getOrderNumber())
     }
+
+    override fun deleteByOrderNumber(orderNumber: String) {
+        orderPersistencePort.deleteByOrderNumber(orderNumber)
+    }
 }

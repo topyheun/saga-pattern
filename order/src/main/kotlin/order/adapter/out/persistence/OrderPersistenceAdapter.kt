@@ -13,4 +13,8 @@ class OrderPersistenceAdapter(
         val orderJpaEntity = orderJpaRepository.save(OrderJpaEntity(order.getOrderNumber()))
         return Order(orderJpaEntity.id, orderJpaEntity.orderNumber)
     }
+
+    override fun deleteByOrderNumber(orderNumber: String) {
+        orderJpaRepository.deleteByOrderNumber(orderNumber);
+    }
 }
