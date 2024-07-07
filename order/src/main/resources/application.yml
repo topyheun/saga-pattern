@@ -8,7 +8,7 @@ spring:
       path: /h2-console
   datasource:
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:orders;DATABASE_TO_UPPER=false;
+    url: jdbc:h2:mem:order;DATABASE_TO_UPPER=false;
     username: topy
     password:
   jpa:
