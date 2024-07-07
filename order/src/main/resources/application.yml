@@ -1,5 +1,5 @@
 server:
-  port: 9091
+  port: 3001
 
 spring:
   h2:
