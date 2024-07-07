@@ -7,6 +7,7 @@ import jakarta.persistence.*
 class OrderJpaEntity(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long,
+
     var orderNumber: String
 ) {
 
