@@ -15,6 +15,6 @@ class OrderPersistenceAdapter(
     }
 
     override fun deleteByOrderNumber(orderNumber: String) {
-        orderJpaRepository.deleteByOrderNumber(orderNumber);
+        orderJpaRepository.deleteByOrderNumber(orderNumber)
     }
 }
