@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
 @Service
-class OrderCreateService(
+class OrderService(
     private val orderPersistencePort: OrderPersistencePort,
     private val orderPublishPort: OrderPublishPort,
 ) : OrderUseCase {
