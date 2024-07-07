@@ -1,0 +1,16 @@
+server:
+  port: 3003
+
+spring:
+  application:
+    name: payment-service
+  kafka:
+    bootstrap-servers: localhost:6001,localhost:6002,localhost:6003
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: group-01
+      auto-offset-reset: latest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
