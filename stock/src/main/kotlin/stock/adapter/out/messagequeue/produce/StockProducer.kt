@@ -14,7 +14,7 @@ class StockProducer(
 
     override fun publishStockDecreasedEvent(orderNumber: String) {
         logger.info { "Stock Decrease Event - Publishing orderNumber: $orderNumber" }
-        kafkaTemplate.send("stock-decreased", orderNumber)
+        kafkaTemplate.send("stock-decrease", orderNumber)
     }
 
     override fun rollbackStockDecreaseEvent(orderNumber: String) {
