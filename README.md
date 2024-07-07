@@ -30,6 +30,8 @@
 
 ### 2. Hexagonal Architecture
 
+<img src="https://github.com/topyheun/saga-pattern/assets/41532299/9e691262-0304-497d-b164-4eb8f3067c4b" width="650">
+
 각 구성 요소가 독립적으로 동작할 수 있도록 설계하여 코드의 응집도를 높이고 결합도를 낮췄습니다.
 
 <br>
