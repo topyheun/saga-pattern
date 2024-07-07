@@ -19,7 +19,7 @@ class StockConsumer(
     }
 
     @KafkaListener(topics = ["stock-rollback"], groupId = "group-01")
-    fun rollbackDecreaseStock(orderNumber: String) {
+    fun handleStockDecreaseRollbackEvent(orderNumber: String) {
         logger.info { "Stock Rollback Event - Received orderNumber: $orderNumber" }
         stockUseCase.increaseStock(orderNumber)
         stockUseCase.rollbackCreatedOrderEvent(orderNumber)
