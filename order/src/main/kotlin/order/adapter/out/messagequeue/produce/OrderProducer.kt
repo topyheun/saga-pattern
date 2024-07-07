@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component
 
 @Component
 class OrderProducer(
-    private val kafkaTemplate: KafkaTemplate<String, String>
+    private val kafkaTemplate: KafkaTemplate<String, String>,
 ) : OrderPublishPort {
 
     private val logger = KotlinLogging.logger {}

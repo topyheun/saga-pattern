@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository
 
 @Repository
 class OrderPersistenceAdapter(
-    private val orderJpaRepository: OrderJpaRepository
+    private val orderJpaRepository: OrderJpaRepository,
 ) : OrderPersistencePort {
 
     override fun save(order: Order): Order {

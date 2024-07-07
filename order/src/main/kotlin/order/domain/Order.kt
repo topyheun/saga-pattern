@@ -5,7 +5,7 @@ import java.util.*
 class Order(
     private val id: Long,
     private val orderNumber: String,
-    private val productId: Long
+    private val productId: Long,
 ) {
 
     constructor(id: Long, orderNumber: String) : this(id, orderNumber, 0)

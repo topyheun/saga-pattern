@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional
 @Service
 class OrderCreateService(
     private val orderPersistencePort: OrderPersistencePort,
-    private val orderPublishPort: OrderPublishPort
+    private val orderPublishPort: OrderPublishPort,
 ) : OrderUseCase {
 
     @Transactional

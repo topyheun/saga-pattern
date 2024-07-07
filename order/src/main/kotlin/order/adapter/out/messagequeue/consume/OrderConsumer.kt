@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component
 
 @Component
 class OrderConsumer(
-    private val orderUseCase: OrderUseCase
+    private val orderUseCase: OrderUseCase,
 ) {
 
     private val logger = KotlinLogging.logger {}

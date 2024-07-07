@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 class OrderRestController(
-    private val orderCreateService: OrderCreateService
+    private val orderCreateService: OrderCreateService,
 ) {
 
     @PostMapping("/order")
