@@ -13,7 +13,7 @@ class OrderConsumer(
     private val logger = KotlinLogging.logger {}
 
     @KafkaListener(topics = ["order-rollback"], groupId = "group-01")
-    fun handleOrderRollbackEvent(orderNumber: String) {
+    fun handleOrderCreateRollbackEvent(orderNumber: String) {
         logger.info { "Order Rollback Event - Received orderNumber: $orderNumber" }
         orderUseCase.deleteByOrderNumber(orderNumber)
     }
