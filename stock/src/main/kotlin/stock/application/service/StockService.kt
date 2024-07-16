@@ -2,6 +2,7 @@ package stock.application.service
 
 import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 import stock.application.port.`in`.StockUsecase
 import stock.application.port.out.StockPersistencePort
 import stock.application.port.out.StockPublishPort
@@ -14,6 +15,7 @@ class StockService(
 
     private val logger = KotlinLogging.logger {}
 
+    @Transactional
     override fun decreaseStock(orderNumber: String) {
         try {
             logger.info { "Stock Decrease Start - orderNumber: $orderNumber" }
