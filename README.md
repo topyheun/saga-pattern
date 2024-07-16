@@ -1,8 +1,8 @@
 # Saga Pattern
 
-이 프로젝트는 MSA(Microservices Architecture) 환경에서 트랜잭션 관리를 Saga 패턴을 사용하여 구현한 예제입니다. 패키지 구조는 Hexagonal Architecture로 구성되어 있으며, Kotlin을 사용하여 구현했습니다.
+이 프로젝트는 MSA 환경에서 주문 요청 후 결제 처리 과정에서 문제가 발생할 경우, 보상 트랜잭션을 사용하여 트랜잭션을 롤백하는 Saga 패턴을 구현한 예제입니다. 패키지 구조는 Hexagonal Architecture로 구성되어 있으며, Kotlin을 사용하여 구현했습니다.
 
-프로젝트의 주요 목표는 MSA 환경에서의 트랜잭션 관리 방식을 이해하고, Kotlin 언어를 활용하여 애플리케이션을 개발하는 것입니다. 또한, Hexagonal Architecture를 적용하여 유지보수성과 확장성 있는 코드 구조를 설계하는 것입니다.
+프로젝트의 주요 목표는 MSA 환경에서의 트랜잭션 관리 방식을 이해하고, Kotlin과 Hexagonal Architecture를 활용하여 설계 및 구현하는 것입니다.
 
 #### 사용 기술
 
